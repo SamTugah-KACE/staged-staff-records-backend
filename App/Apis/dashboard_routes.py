@@ -14,6 +14,7 @@ from Crud.crud_dashboard import (
 )
 from Schemas.schemas import DashboardCreateSchema, DashboardSchema
 from Crud.auth import get_db, require_permissions  # RBAC dependency from earlier
+from Utils.config import get_config
 
 router = APIRouter()
 
@@ -44,8 +45,10 @@ async def upsert_dashboard(
             # Get the form design and fields.
             form_design = dashboard_in.dashboard_data
             form_fields = form_design.get("fields", [])
+            config = get_config()
+            api_url = f"{config.API_BASE_URL}/api/organizations/create-url"
             # The API URL may come from config in production; hard-coded here for demonstration.
-            api_url = "https://staff-records-backend.onrender.com/api/organizations/create-url"
+            #api_url = "https://staff-records-backend.onrender.com/api/organizations/create-url"
             compiled_code = compileDynamicSubmitCode(form_fields, api_url)
             form_design["submitCode"] = compiled_code
             # Update the incoming payload with the compiled submit code.
