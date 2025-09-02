@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to {{ organization_name }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h1 style="color: #2c3e50; margin-bottom: 10px;">Welcome to {{ organization_name }}!</h1>
+    </div>
+    
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #2c3e50; margin-top: 0;">Your Account is Ready</h2>
+        <p>Hello {{ employee_name }},</p>
+        <p>Welcome to {{ organization_name }}! Your account has been successfully created and is ready for use.</p>
+    </div>
+    
+    <div style="background-color: #e8f4fd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #2c3e50; margin-top: 0;">🔐 Your Login Credentials</h3>
+        <div style="background-color: white; padding: 15px; border-radius: 6px; border-left: 4px solid #3498db; margin: 15px 0;">
+            <p style="margin: 8px 0;"><strong>📧 Username:</strong> <span style="background-color: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-family: monospace;">{{ username }}</span></p>
+            <p style="margin: 8px 0;"><strong>🔑 Password:</strong> <span style="background-color: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-family: monospace;">{{ password }}</span></p>
+        </div>
+        <p style="margin: 15px 0 0 0; color: #666; font-size: 14px;"><strong>🌐 Access URL:</strong> <a href="{{ login_url }}" style="color: #3498db; text-decoration: none;">{{ login_url }}</a></p>
+    </div>
+    
+    <div style="background-color: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <h4 style="color: #856404; margin-top: 0;">Important Security Note</h4>
+        <p style="color: #856404; margin-bottom: 0;">Please change your password after your first login for security purposes.</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ login_url }}" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); transition: all 0.3s ease;">
+            🚀 Access Your Account
+        </a>
+        <p style="margin-top: 15px; color: #666; font-size: 14px;">Click the button above to go directly to your login page</p>
+    </div>
+    
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
+        <p>If you have any questions or need assistance, please contact your system administrator.</p>
+        <p>This email was sent by {{ organization_name }}.</p>
+    </div>
+</body>
+</html>

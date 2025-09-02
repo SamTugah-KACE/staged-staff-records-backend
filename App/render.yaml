@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: staff-records-backend
+    env: python
+    # plan: free                  # or Starter, whatever your tier is
+    # regions:
+    #   - iad                     # choose the region closest to you
+    # buildCommand:              # ➊ install deps
+    #   - pip install -r requirements.txt
+    preDeployCommand:          # ➋ run migrations + seeds
+      - alembic upgrade head
+      # - python scripts/seed_superadmin.py   # uncomment if you have a separate seed script
+    # startCommand:              # ➌ launch FastAPI
+    #   - uvicorn main:app --host 0.0.0.0 --port 8080
+    # envVars:                   # ➍ Database & any other secrets
+    #   - key: DATABASE_URL
+    #     fromDatabase: DATABASE

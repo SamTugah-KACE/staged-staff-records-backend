@@ -1,0 +1,4 @@
+google_cloud_storage_api.json
+service_account.json
+.env
+__pycache__
